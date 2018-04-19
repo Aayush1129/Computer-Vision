@@ -13,7 +13,7 @@ _,thresh = cv2.threshold(gray,150,255,cv2.THRESH_BINARY) # Performing the binary
 
 cv2.imwrite('temp_folder/thres.jpg',thresh)              # saving the intermediate image for future reference
 
-text = pytesseract.image_to_string(Image.open(r'temp_folder/thres.jpg'))
+text = pytesseract.image_to_string(Image.open(r'temp_folder/thres.jpg'))   #ocr library
 text = ''.join(e for e in text if e.isalnum())           # removing undesired special characer
 movie_name = {}
 movie_name[img_name] = text
